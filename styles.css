@@ -1,15 +1,14 @@
 *, *::before, *::after{
   padding: 0;
   margin: 0;
-}
-
-html{ 
   box-sizing: border-box;
 }
 
 body {
   background-color: #0d0c0c;
   width: 100%;
+  min-height: 1vh;
+  font-family: 'Switzer', sans-serif;
 }
 
 
@@ -46,7 +45,7 @@ a {
   align-items: center;
 
   a {
-    border: 1px solid #0d0d0d;
+    border: none;
     border-radius: 10px;
     display: flex;
     padding: 8px 16px;
@@ -59,28 +58,57 @@ a {
   background-color: #333;
 }
 
-main {
-  min-height: 1vh;
-}
-
-section {
-  margin: 100px 100px;
-}
-
-.description-h1 {
+.info-container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   color: #fdfdfd;
-}
-
-.moreexp{
-  text-align: center;
-  color: #9CA3AF;
-  font-size: 20px;
-}
-
-.btn-buy {
-  display: flex;
-  justify-items: center;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin: 150px 0px;
+  gap: 30px;
+ 
+  p {
+    font-size: 20px;
+    color: #9CA3AF;
+  }
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #ff5f7e, #ff66ff, #66ccff, #ffcc66);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: gradient-animation 10s ease infinite;
+  background-size: 300% 300%; /* Aumenta el tamaño para un gradiente más suave */
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.buy-btn{
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  border: none;
+  color: #000;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  opacity: 0.9;
 }
