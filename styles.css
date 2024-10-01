@@ -1,4 +1,4 @@
-*, *::before, *::after{
+*, *::before, *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -6,11 +6,11 @@
 
 body {
   background-color: #0d0c0c;
-  width: 100%;
-  min-height: 1vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Cambiado a columna para acomodar el nav y el main */
   font-family: 'Switzer', sans-serif;
 }
-
 
 h1 {
   font-size: 56px;
@@ -22,56 +22,63 @@ a {
   align-items: center;
 }
 
-.mainheader nav{
+.mainheader nav {
   display: flex;
   justify-content: space-around;
   padding: 16px;
   border-bottom: 2.5px solid rgba(255, 255, 255, 0.1);
+  height: 70px; /* Altura fija para el nav */
 }
 
-.logo-link{
+.logo-link {
   display: flex;
+}
 
-  a {
-    display: flex;
-    gap: 10px;
-    font-size: 20px;
-  }
+.logo-link a {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
 }
 
 .shop-links {
   display: flex;
   gap: 30px;
   align-items: center;
+}
 
-  a {
-    border: none;
-    border-radius: 10px;
-    display: flex;
-    padding: 8px 16px;
-    align-items: center;
-    gap: 10px;
-  }
+.shop-links a {
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 10px;
 }
 
 .shop-links a:hover {
   background-color: #333;
 }
 
+.principal {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex: 1; /* Ocupa el espacio restante */
+}
+
 .info-container {
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: #fdfdfd;
   justify-content: center;
-  align-items: center;
-  margin: 150px 0px;
+  color: #fdfdfd;
   gap: 30px;
- 
-  p {
-    font-size: 20px;
-    color: #9CA3AF;
-  }
+  text-wrap: pretty;
+}
+
+p {
+  font-size: 20px;
+  color: #9CA3AF;
 }
 
 .gradient-text {
@@ -79,25 +86,29 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+
   animation: gradient-animation 10s ease infinite;
-  background-size: 300% 300%; /* Aumenta el tamaño para un gradiente más suave */
+  background-size: 300% 300%;
 }
 
 @keyframes gradient-animation {
   0% {
-    background-position: 0% 50%;
+      background-position: 0% 50%;
   }
   50% {
-    background-position: 100% 50%;
+      background-position: 100% 50%;
   }
   100% {
-    background-position: 0% 50%;
+      background-position: 0% 50%;
   }
 }
 
+.button-container{
+  display: flex;
+  justify-content: center;
+}
 
-.buy-btn{
+.buy-btn {
   display: flex;
   align-items: center;
   font-size: 16px;
@@ -108,6 +119,8 @@ a {
   border-radius: 9999px;
   cursor: pointer;
 }
+
+
 
 .buy-btn:hover {
   opacity: 0.9;
