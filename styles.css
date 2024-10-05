@@ -99,8 +99,8 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-
-  animation: gradient-animation 8s ease infinite;
+  background-size: 300% 100%; /* Ajusta el tamaño del fondo para que la animación sea más notoria */
+  animation: gradient-animation 10s ease infinite;
 }
 
 @keyframes gradient-animation {
@@ -114,6 +114,7 @@ p {
       background-position: 0% 50%;
   }
 }
+
 
 .button-container{
   display: flex;
